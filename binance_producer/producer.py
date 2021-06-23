@@ -1,6 +1,6 @@
 import json
 from binance import ThreadedWebsocketManager
-from binance_producer import config
+import config
 import boto3
 import os
 import logging
@@ -18,8 +18,8 @@ client = boto3.client("kinesis", "ap-northeast-2")
 
 
 def main():
-    idx = os.getenv('INDEX')  # 331/batch
-    logger.info("index: ", idx)
+    idx = int(os.getenv('INDEX'))  # 331/batch
+    logger.info(f"index: {idx}")
     batch = 20  # 한번에 조회할 코인 갯수
     streams = []
 
@@ -30,7 +30,7 @@ def main():
 
     # 코인 종류 한번에 지정하기
 
-    logger.info("streams: ", streams)
+    logger.info(f"streams: {streams}")
 
     # 레코드 임시 저장소
     kinesis_records = []
