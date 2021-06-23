@@ -7,8 +7,8 @@ import boto3
 api_key = config.BINANCE_CONFIG["API_KEY"]
 api_secret = config.BINANCE_CONFIG["SECRET_KEY"]
 
-session = boto3.Session(profile_name="default")
-client = session.client("kinesis")
+
+client = boto3.client("kinesis", "ap-northeast-2")
 
 
 def main():
