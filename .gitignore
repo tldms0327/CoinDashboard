@@ -5,9 +5,11 @@
 
 __pycache__
 
-config.py
+binance_producer/config.py
 
 
 .ipynb_checkpoints/api_analysis-checkpoint.ipynb
 
 api/.ipynb_checkpoints/
+
+.idea/

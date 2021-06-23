@@ -3,6 +3,13 @@ from binance import ThreadedWebsocketManager
 from binance_producer import config
 import boto3
 import os
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s : %(message)s',
+                    datefmt="%Y-%m-%d %H:%M:%S")
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
 
 api_key = config.BINANCE_CONFIG["API_KEY"]
 api_secret = config.BINANCE_CONFIG["SECRET_KEY"]
@@ -12,6 +19,7 @@ client = boto3.client("kinesis", "ap-northeast-2")
 
 def main():
     idx = os.getenv('INDEX')  # 331/batch
+    logger.info("index: ", idx)
     batch = 20  # 한번에 조회할 코인 갯수
     streams = []
 
@@ -22,7 +30,7 @@ def main():
 
     # 코인 종류 한번에 지정하기
 
-    print(streams)
+    logger.info("streams: ", streams)
 
     # 레코드 임시 저장소
     kinesis_records = []
@@ -78,10 +86,11 @@ def main():
                 response = client.put_records(
                     Records=kinesis_records, StreamName="coinBoard"
                 )
-                print(json.dumps(response, sort_keys=True))
+                logger.info("Records are sent: ", json.dumps(response, sort_keys=True))
                 kinesis_records.clear()
 
     # 소켓 시작
+    logger.info("Socker Started!")
     twm = ThreadedWebsocketManager(api_key=api_key, api_secret=api_secret)
     twm.start()
     twm.start_multiplex_socket(callback=handle_socket_message, streams=streams)
