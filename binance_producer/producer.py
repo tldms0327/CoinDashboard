@@ -1,46 +1,28 @@
 import json
-import requests
 from binance import ThreadedWebsocketManager
-import config
+from binance_producer import config
 import boto3
+import os
 
 api_key = config.BINANCE_CONFIG["API_KEY"]
 api_secret = config.BINANCE_CONFIG["SECRET_KEY"]
-
 
 client = boto3.client("kinesis", "ap-northeast-2")
 
 
 def main():
+    idx = os.getenv('INDEX')  # 331/batch
+    batch = 20  # 한번에 조회할 코인 갯수
+    streams = []
 
-    sym_list = []
-    with open("symbols.txt", "r") as f:
-        sym_list = f.readlines()
-
-    for i in range(len(sym_list)):
-        sym_list[i] = sym_list[i].strip()
+    # 조회할 코인 목록 만들기
+    f = open("symbols.txt").read()
+    sym_list = f.strip().split('\n')
+    streams = [x.lower() + "@kline_1m" for x in sym_list[idx * batch:(idx + 1) * batch]]
 
     # 코인 종류 한번에 지정하기
-    streams = []
-    for i in range(50):
-        streams.append(sym_list[i].lower() + "@kline_1m")
-    print()
-    print(streams)
-    print()
 
-    # 테스트용 10개짜리
-    # streams = [
-    #     "ethbtc@kline_1m",
-    #     "dogebtc@kline_1m",
-    #     "adabtc@kline_1m",
-    #     "bnbbtc@kline_1m",
-    #     "xrpbtc@kline_1m",
-    #     "dotbtc@kline_1m",
-    #     "maticbtc@kline_1m",
-    #     "tfuelbtc@kline_1m",
-    #     "solbtc@kline_1m",
-    #     "linkbtc@kline_1m",
-    # ]
+    print(streams)
 
     # 레코드 임시 저장소
     kinesis_records = []
@@ -92,7 +74,7 @@ def main():
             data = json.dumps(data)
             kinesis_records.append({"Data": data, "PartitionKey": coin})
             # 레코드가 10개 모이면 배치 전송, 테스트가 10개라서 10개로 함
-            if len(kinesis_records) == 10:
+            if len(kinesis_records) == batch:
                 response = client.put_records(
                     Records=kinesis_records, StreamName="coinBoard"
                 )
