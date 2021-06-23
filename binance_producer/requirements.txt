@@ -1,0 +1,3 @@
+boto3
+requests
+python-binance==1.0.12

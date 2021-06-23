@@ -1,5 +1,12 @@
 
+.ipynb_checkpoints/
+
 .DS_Store
+
+__pycache__
+
+config.py
+
 
 .ipynb_checkpoints/api_analysis-checkpoint.ipynb
 
