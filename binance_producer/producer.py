@@ -86,7 +86,7 @@ def main():
                 response = client.put_records(
                     Records=kinesis_records, StreamName="coinBoard"
                 )
-                logger.info("Records are sent: ", json.dumps(response, sort_keys=True))
+                logger.info(f"Records are sent: {response}")
                 kinesis_records.clear()
 
     # 소켓 시작
