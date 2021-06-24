@@ -5,8 +5,11 @@ import boto3
 import os
 import logging
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s : %(message)s',
-                    datefmt="%Y-%m-%d %H:%M:%S")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s : %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
@@ -18,15 +21,17 @@ client = boto3.client("kinesis", "ap-northeast-2")
 
 
 def main():
-    idx = int(os.getenv('INDEX'))  # 331/batch
+    idx = int(os.getenv("INDEX"))  # 331/batch
     logger.info(f"index: {idx}")
     batch = 20  # 한번에 조회할 코인 갯수
     streams = []
 
     # 조회할 코인 목록 만들기
     f = open("symbols.txt").read()
-    sym_list = f.strip().split('\n')
-    streams = [x.lower() + "@kline_1m" for x in sym_list[idx * batch:(idx + 1) * batch]]
+    sym_list = f.strip().split("\n")
+    streams = [
+        x.lower() + "@kline_1m" for x in sym_list[idx * batch : (idx + 1) * batch]
+    ]
 
     # 코인 종류 한번에 지정하기
 
@@ -46,19 +51,15 @@ def main():
     def format_json_keys(data):
         new_format = {
             "t": "opentime",
-            "T": "closetime",
             "s": "symbol",
             "o": "open_price",
             "c": "close_price",
             "h": "high_price",
             "l": "low_price",
-            "v": "base_asset_volume",
             "n": "num_trades",
             "q": "quote_asset_volume",
-            "V": "tb_base_asset_volume",
-            "Q": "tb_quote_asset_volume",
         }
-        want = ["t", "T", "s", "o", "c", "h", "l", "v", "n", "q", "V", "Q"]
+        want = ["t", "s", "o", "c", "h", "l", "n", "q"]
 
         data_filtered = dict()
         for col in want:
@@ -67,11 +68,32 @@ def main():
         new_data = dict(
             (new_format[key], value) for (key, value) in data_filtered.items()
         )
+
         return new_data
+
+    def to_KRW(data):
+        key_float = [
+            "open_price",
+            "close_price",
+            "high_price",
+            "low_price",
+            "quote_asset_volume",
+        ]
+        # 빗썸에서 실시간 국내 비트코인 가격 받아오기
+        # uri = "https://api.bithumb.com/public/ticker/BTC"
+        # bitcoin = requests.get(uri).json()
+        # price = int(bitcoin["data"]["closing_price"])
+
+        # 비트코인 가격 고정해서 사용하기
+        price = 40000000
+        for key in key_float:
+            data[key] = float(data[key]) * price
+        return data
 
     # 각 쓰레드에서 msg 들어왔을때 작동할 메서드
     def handle_socket_message(msg):
         data = format_json_keys(msg["data"]["k"])  # dict type, 새로 받아온 데이터
+        data = to_KRW(data)
         coin = msg["data"]["s"]  # str type, 지금 다루고 있는 symbol, uppercase
         prev = dic_current[coin]  # 이전 값 불러오기
         dic_current[coin] = data  # 새로운 값 넣기
@@ -90,7 +112,7 @@ def main():
                 kinesis_records.clear()
 
     # 소켓 시작
-    logger.info("Socker Started!")
+    logger.info("Socket Started!")
     twm = ThreadedWebsocketManager(api_key=api_key, api_secret=api_secret)
     twm.start()
     twm.start_multiplex_socket(callback=handle_socket_message, streams=streams)
@@ -98,4 +120,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+       
