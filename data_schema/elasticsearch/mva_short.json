@@ -1,0 +1,30 @@
+{
+    "mva_short" : {
+      "mappings" : {
+        "properties" : {
+          "datetime" : {
+            "type" : "date"
+          },
+          "mva_short" : {
+            "type" : "double",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "symbol" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

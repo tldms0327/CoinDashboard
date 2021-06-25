@@ -1,0 +1,15 @@
+
+.ipynb_checkpoints/
+
+.DS_Store
+
+__pycache__
+
+binance_producer/config.py
+
+
+.ipynb_checkpoints/api_analysis-checkpoint.ipynb
+
+api/.ipynb_checkpoints/
+
+.idea/

@@ -1,0 +1,69 @@
+{
+    "coinboard4" : {
+      "mappings" : {
+        "properties" : {
+          "close_price" : {
+            "type" : "double",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "high_price" : {
+            "type" : "double",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "low_price" : {
+            "type" : "double",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "num_trades" : {
+            "type" : "long"
+          },
+          "open_price" : {
+            "type" : "double",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "opentime" : {
+            "type" : "date"
+          },
+          "quote_asset_volume" : {
+            "type" : "double",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "symbol" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
