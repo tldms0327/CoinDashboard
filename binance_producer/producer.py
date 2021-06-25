@@ -100,7 +100,7 @@ def main():
     def handle_socket_message(msg):
         data = format_json_keys(msg["data"]["k"])  # dict type, 새로 받아온 데이터
         data = to_KRW(data)
-        data = to_timestamp(data)
+        # data = to_timestamp(data)
         coin = msg["data"]["s"]  # str type, 지금 다루고 있는 symbol, uppercase
         prev = dic_current[coin]  # 이전 값 불러오기
         dic_current[coin] = data  # 새로운 값 넣기
