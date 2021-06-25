@@ -1,0 +1,30 @@
+{
+    "stochastic" : {
+      "mappings" : {
+        "properties" : {
+          "Stochastic" : {
+            "type" : "double",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "datetime" : {
+            "type" : "date"
+          },
+          "symbol" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
