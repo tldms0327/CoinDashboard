@@ -1,6 +1,6 @@
 # 데이터 흐름
 
-![%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%20%E1%84%92%E1%85%B3%E1%84%85%E1%85%B3%E1%86%B7%20fb213a37147e4fc6b04795ef1dda2f0d/_2021-06-25__8.52.44.png](%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%20%E1%84%92%E1%85%B3%E1%84%85%E1%85%B3%E1%86%B7%20fb213a37147e4fc6b04795ef1dda2f0d/_2021-06-25__8.52.44.png)
+![1](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/456ecfe6-81eb-470d-920d-e181a636038a/_2021-06-25__8.52.44.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210625%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210625T134431Z&X-Amz-Expires=86400&X-Amz-Signature=d9f372af098d753c91d72b1b8b77b98d802b9bd88c17aa02340b1a487568cbff&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22_2021-06-25__8.52.44.png%22)
 
 ### Data Source
 
@@ -20,7 +20,7 @@
 
 ### EMR
 
-![%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%20%E1%84%92%E1%85%B3%E1%84%85%E1%85%B3%E1%86%B7%20fb213a37147e4fc6b04795ef1dda2f0d/_2021-06-25__10.19.31.png](%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%20%E1%84%92%E1%85%B3%E1%84%85%E1%85%B3%E1%86%B7%20fb213a37147e4fc6b04795ef1dda2f0d/_2021-06-25__10.19.31.png)
+![2](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/813387a9-f933-4faa-853f-f3d4967a1811/_2021-06-25__10.19.31.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210625%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210625T134448Z&X-Amz-Expires=86400&X-Amz-Signature=e7e37fa3b7a0188a846db5f3dfc65023ba3633fb9d448ddcee8865e0ca89b059&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22_2021-06-25__10.19.31.png%22)
 
 - DataStreamReader 객체를 이용하여 S3에 전송되는 parquet를 실시간으로 읽고 계산
 - 총 8개의 지표: 장/단기 이동평균, Bollinger Band, Stochastic, CCI, 1mRate, 1hRate, RSI

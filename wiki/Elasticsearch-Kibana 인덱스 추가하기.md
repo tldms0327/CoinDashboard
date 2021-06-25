@@ -73,7 +73,7 @@
     }
     ```
 
-    ![Elasticsearch%20-%20Kibana%20%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%A6%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20fd8cae0a4b364247b8cc92dc6d1b0aaf/Untitled.png](Elasticsearch%20-%20Kibana%20%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%A6%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%8E%E1%85%AE%E1%84%80%E1%85%A1%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20fd8cae0a4b364247b8cc92dc6d1b0aaf/Untitled.png)
+    ![1](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/95f08d9c-a2cf-4e8f-9a5b-053e8a3975d5/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210625%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210625T134403Z&X-Amz-Expires=86400&X-Amz-Signature=db97be6c86d50bcea0b14dd5ba3671a9cb56eec36ceb6b1001e05266a7c534ba&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 3. 현재 매핑 확인
 

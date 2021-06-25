@@ -80,4 +80,4 @@ $ sudo systemctl stop kibana.service
 
 주소창에 `http://{ec2IP_address}:5601`을 입력하여 Kibana에 접속한다.
 
-![Elasticsearch%20Kibana%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%20823015e51fa24586ba49605fa987f604/Untitled.png](Elasticsearch%20Kibana%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%20823015e51fa24586ba49605fa987f604/Untitled.png)
+![1](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/28c15cb8-50e4-4c38-b9e3-374a70f1e586/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210625%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210625T134326Z&X-Amz-Expires=86400&X-Amz-Signature=3285456b270c2e354da856efad0ca15437cb8fbdb40f54b1544e0b38f57b3035&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)

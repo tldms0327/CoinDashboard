@@ -173,6 +173,6 @@ $ group zeppelin # zeppelin : zeppelin hdfsadmingroup
 
 `writeStream` 할 때 `queryName`을 설정하면 테이블로서 접근 가능하다.
 
-![Data%20Stream%20Analysis%20with%20EMR%20ec4d7544f5e8495ea49c4792ed75ff83/_2021-06-24__2.37.53.png](Data%20Stream%20Analysis%20with%20EMR%20ec4d7544f5e8495ea49c4792ed75ff83/_2021-06-24__2.37.53.png)
+![1](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4905f845-aab7-46fb-bf18-6df7ac43fe9d/_2021-06-24__2.37.53.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210625%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210625T134253Z&X-Amz-Expires=86400&X-Amz-Signature=5bb9315032878e9fc07fb9d45210f7407259907540d68d0bcec5a6a13115c88f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22_2021-06-24__2.37.53.png%22)
 
 **성공..!** 🤩
