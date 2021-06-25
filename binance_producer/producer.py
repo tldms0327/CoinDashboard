@@ -4,6 +4,7 @@ import config
 import boto3
 import os
 import logging
+import datetime
 
 logging.basicConfig(
     level=logging.INFO,
@@ -89,11 +90,17 @@ def main():
         for key in key_float:
             data[key] = float(data[key]) * price
         return data
+    
+    def to_timestamp(data):
+        # unixtime to datetime
+        data["opentime"] = datetime.datetime.fromtimestamp((data["opentime"])/1000).strftime('%Y-%m-%d %H:%M:%S')
+        return data
 
     # 각 쓰레드에서 msg 들어왔을때 작동할 메서드
     def handle_socket_message(msg):
         data = format_json_keys(msg["data"]["k"])  # dict type, 새로 받아온 데이터
         data = to_KRW(data)
+        data = to_timestamp(data)
         coin = msg["data"]["s"]  # str type, 지금 다루고 있는 symbol, uppercase
         prev = dic_current[coin]  # 이전 값 불러오기
         dic_current[coin] = data  # 새로운 값 넣기
