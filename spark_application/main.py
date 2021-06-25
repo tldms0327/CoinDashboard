@@ -6,4 +6,4 @@ if __name__ == "__main__":
     spark = SparkSession.builder.appName("indicators-calculator").getOrCreate()
 
     data_loader = DataLoader(spark)
-    data_loader.test()
+    data_loader.streaming_calculation()
