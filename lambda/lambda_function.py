@@ -12,21 +12,17 @@ awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, region, servi
 
 def lambda_handler(event, context):
     client = boto3.client("s3", "ap-northeast-2")
-
     for record in event["Records"]:
         bucket = record["s3"]["bucket"]["name"]
         key = record["s3"]["object"]["key"]
-
     obj = client.get_object(Bucket=bucket, Key=key)
     body = obj["Body"].read()
     lines = body.splitlines()
-
     if len(lines) != 0:
         for line in lines:
             line = json.loads(line.decode())
             if "index" in line:
                 sendData(line, line["index"])
-
     return {
         'status': 200
     }
@@ -41,6 +37,5 @@ def sendData(data, index):
     data.pop("index", None)
     unix = int(time()) * 1000
     data["datetime"] = unix
-
     r = requests.post(url, json=data, headers=headers, auth=awsauth)
     print("status: ", r.text)
