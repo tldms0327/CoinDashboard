@@ -1,41 +1,28 @@
 # CoinPrediction
-2021 - 1 YBIGTA  Conference
 
-main
-  - dev
-    - model
-    - api
-    - etc...
+### 21-1 YBIGTA Conference
+팀원: 김성하(18기), 노연수(17기), 안범진(18기), 이동주(17기), 이시은(16기), 안지훈(17기), 주우진(18기)
 
-main 브랜치에서 작업하지 말고, 새 브랜치를 생성할 땐 꼭 dev에서 해주세요.
-각 기능별로 브랜치를 만들고, '새 폴더'를 만들어서 하면 좋을 것 같아요.
+프로젝트 기간: 6/20 ~ 6/26
 
-#### commit message형식: "commit type(scope): contents"
+## 프로젝트 개요
 
-Ex. feat(model): add coin prediction ML model
+바야흐로 대 코인시대! 정보가 난무하는 코인 시장에서 당신의 성투(성공적인 투자)를 위한 코인 정보 대시보드입니다.
 
-##### commit type
+저희는 Binance API로부터 코인 가격 데이터를 가져와 실시간 가격 정보 뿐만 아니라 볼린저 밴드, 1시간/1분 변동률, CCI지표, Stochastic지표, RSI지표,단순이동평균을 한눈에 보여주는 대시보드를 제작하였습니다.
 
-feat:     A new feature 
+이 과정에서 AWS 클라우드 컴퓨팅 서비스, Python, ElasticSearch,Spark를 활용하였습니다.
 
-fix:      A bug fix 
+## 프로젝트 아키텍쳐
 
-docs:     Documentation only changes 
+![image](https://user-images.githubusercontent.com/61309514/125166031-a60b3200-e1d4-11eb-82e5-bda2c7931c84.png)
 
-style:    Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc) 
+## 발표 영상
 
-refactor: A code change that neither fixes a bug nor adds a feature 
+21-1 YBIGTA Conference에서 발표했던 영상은 [Youtube](https://www.youtube.com/watch?v=Cy7RHdDHDjM)에 업로드되어 있습니다. 
 
-perf:     A code change that improves performance 
+<br>
 
-test:     Adding missing tests or correcting existing tests 
+## 구글 드라이브 링크 (프로젝트 시연,  발표자료)
 
-build:    Changes that affect the build system or external dependencies 
-
-ci:       Changes to our CI configuration files and scripts 
-
-chore:    Other changes that don't modify src or test files 
-
-revert:   Reverts a previous commit 
-
-
+21-1 YBIGTA Conference에 사용되었던 발표자료는 [구글드라이브](https://drive.google.com/file/d/14YkgRYJirfiCuKU5kBZFuMeOvTPZCVxP/view?usp=sharing) 에 업로드되어 있습니다. 
