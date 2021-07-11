@@ -13,6 +13,32 @@
 
 이 과정에서 AWS 클라우드 컴퓨팅 서비스, Python, ElasticSearch,Spark를 활용하였습니다.
 
+## 프로젝트 기술 스택
+
+- AWS
+  - AWS ECS, AWS Fargate
+  - AWS kinesis Data Stream,Firehose
+  - AWS Glue
+  - AWS EMR
+  - AWS S3
+  - AWS Lambda
+  - AWS ElasticSearch
+- Python
+  - Python 3.8
+  - PySpark
+- ElasticSearch
+  - ElasticSearch
+  - Kibana
+- Spark
+  - Spark SQL
+  - Spark Streaming
+  - Spark UI
+  - Zepplin
+  - JupyterHub
+- Slack, Notion
+- Binance API
+  - WebSocket Market Stream
+
 ## 프로젝트 아키텍쳐
 
 ![image](https://user-images.githubusercontent.com/61309514/125166031-a60b3200-e1d4-11eb-82e5-bda2c7931c84.png)
