@@ -1,4 +1,4 @@
-# CoinPrediction
+# CoinBoard
 
 ### 21-1 YBIGTA Conference
 팀원: 김성하(18기), 노연수(17기), 안범진(18기), 이동주(17기), 이시은(16기), 안지훈(17기), 주우진(18기)
